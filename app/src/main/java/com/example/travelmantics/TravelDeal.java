@@ -1,13 +1,13 @@
 package com.example.travelmantics;
 
-public class TravelDeals {
+public class TravelDeal {
     private String id;
     private String title;
     private String description;
     private String price;
     private String imageUrl;
 
-    public TravelDeals(String id, String title, String description, String price, String imageUrl) {
+    public TravelDeal(String title, String description, String price, String imageUrl) {
         this.setId(id);
         this.setTitle(title);
         this.setDescription(description);
