@@ -8,49 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1079334029679:android:3e13d76c79b42e32",
-        "android_client_info": {
-          "package_name": "com.example"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1079334029679-vohipl2ug6res0ml8j58tpe85q5n7fur.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example",
-            "certificate_hash": "27da6624fef8e0e77cf935a24e0bfd2fb376da0c"
-          }
-        },
-        {
-          "client_id": "1079334029679-3kbkf1gokesggatv83q3mrlao58p170b.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDwC1pnwcJqzw9JR69LCoYAHVTKsLcN_XU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1079334029679-3kbkf1gokesggatv83q3mrlao58p170b.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:1079334029679:android:b4470d06b32c6715",
         "android_client_info": {
           "package_name": "com.example.travelmantics"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1079334029679-e6a77du5qk5kggcqrpdcb7gjtdkbcfrf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travelmantics",
+            "certificate_hash": "9743875c83b1351f72628244c2e7655268342d92"
+          }
+        },
         {
           "client_id": "1079334029679-imq1upbde6qb2bjmlhv17t44ff5o58e4.apps.googleusercontent.com",
           "client_type": 1,
