@@ -1,6 +1,7 @@
 package com.example.travelmantics;
 
 import android.app.Activity;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,7 +36,7 @@ public class FirebaseUtil {
             firebaseUtil = new FirebaseUtil();
             mFirebaseDatabase = FirebaseDatabase.getInstance();
             mFirebaseAuth = FirebaseAuth.getInstance();
-            caller = ListActivity;
+            caller = callerActivity;
             mAuthListener = new FirebaseAuth.AuthStateListener() {
                 @Override
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -47,7 +48,7 @@ public class FirebaseUtil {
                         checkAdmin(userId);
                     }
 
-                    Toast.makeText(ListActivity.getBaseContext(), "Welcome back!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(callerActivity.getBaseContext(), "Welcome back!", Toast.LENGTH_LONG).show();
                 }
             };
 
