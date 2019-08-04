@@ -102,11 +102,13 @@ public class DealActivity extends AppCompatActivity {
             menu.findItem(R.id.delete_menu).setVisible(true);
             menu.findItem(R.id.save_menu).setVisible(true);
             enableEditTexts(true);
+            findViewById(R.id.btnImage).setEnabled(true);
         }
         else {
             menu.findItem(R.id.delete_menu).setVisible(false);
             menu.findItem(R.id.save_menu).setVisible(false);
             enableEditTexts(false);
+            findViewById(R.id.btnImage).setEnabled(false);
         }
 
 
@@ -123,7 +125,7 @@ public class DealActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                    String url = taskSnapshot.getStorage().getDownloadUrl().toString();
-                   String pictureName = taskSnapshot.getStorage().getPath()
+                   String pictureName = taskSnapshot.getStorage().getPath();
                    deal.setImageUrl(url);
                    deal.setImageName(pictureName);
                     Log.d("Url", url);
@@ -164,7 +166,7 @@ public class DealActivity extends AppCompatActivity {
                 public void onFailure(@NonNull Exception e) {
                     Log.d("Deleted Image", e.getMessage());
                 }
-            })
+            });
         }
     }
     private void backToList() {
