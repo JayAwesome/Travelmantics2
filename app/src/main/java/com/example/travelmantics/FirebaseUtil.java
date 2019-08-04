@@ -119,6 +119,6 @@ public class FirebaseUtil {
     }
     public static void connectStorage(){
         mStorage = FirebaseStorage.getInstance();
-        mStorageRef = mStorage.getReference().child("deal_pictures");
+        mStorageRef = mStorage.getReference().child("deals_pictures");
     }
 }
