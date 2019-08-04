@@ -20,6 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import static android.app.Activity.RESULT_OK;
+
 public class DealActivity extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mDatabaseReference;
@@ -110,7 +112,7 @@ public class DealActivity extends AppCompatActivity {
             ref.putFile(imageUri).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                   String url = taskSnapshot.getDownloadUrl().toString();
+                   String url = taskSnapshot.getStorage().getDownloadUrl().toString();
                    deal.setImageUrl(url);
                 }
             });
