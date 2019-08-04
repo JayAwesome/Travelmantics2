@@ -1,7 +1,6 @@
 package com.example.travelmantics;
 
 import android.app.Activity;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,16 +26,16 @@ public class FirebaseUtil {
     public static FirebaseAuth.AuthStateListener mAuthListener;
     public static ArrayList<TravelDeal> mDeals;
     private static final int RC_SIGN_IN = 123;
-    private static Activity caller;
+    private static ListActivity caller;
     private FirebaseUtil(){};
     public static boolean isAdmin;
 
-    public static void openFbReference(String ref, final Activity callerActivity){
+    public static void openFbReference(String ref, final ListActivity callerActivity){
         if (firebaseUtil == null) {
             firebaseUtil = new FirebaseUtil();
             mFirebaseDatabase = FirebaseDatabase.getInstance();
             mFirebaseAuth = FirebaseAuth.getInstance();
-            caller = callerActivity;
+            caller = ListActivity;
             mAuthListener = new FirebaseAuth.AuthStateListener() {
                 @Override
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -48,7 +47,7 @@ public class FirebaseUtil {
                         checkAdmin(userId);
                     }
 
-                    Toast.makeText(callerActivity.getBaseContext(), "Welcome back!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ListActivity.getBaseContext(), "Welcome back!", Toast.LENGTH_LONG).show();
                 }
             };
 
@@ -80,7 +79,7 @@ public class FirebaseUtil {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 FirebaseUtil.isAdmin=true;
-                Log.d("Admin", "You are an administrator");
+                caller.showMenu();
             }
 
             @Override
