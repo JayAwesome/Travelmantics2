@@ -54,6 +54,7 @@ public class DealActivity extends AppCompatActivity {
         txtTitle.setText(deal.getTitle());
         txtDescription.setText(deal.getDescription());
         txtPrice.setText(deal.getPrice());
+        showImage(deal.getImageUrl());
         Button btnImage = findViewById(R.id.btnImage);
         btnImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,6 +121,7 @@ public class DealActivity extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                    String url = taskSnapshot.getStorage().getDownloadUrl().toString();
                    deal.setImageUrl(url);
+                   showImage(url);
                 }
             });
         }
@@ -162,17 +164,18 @@ public class DealActivity extends AppCompatActivity {
         txtDescription.setEnabled(isEnabled);
         txtPrice.setEnabled(isEnabled);
         }
-        private Void showImage(String url){
-        if (url != null && url.isEmpty() == false){
-            int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-            Picasso.get(this)
-                    .load(url)
-                    .resize(width, width*2/3)
-                    .centerCrop()
-                    .into(imageView);
+        private Void showImage(String url) {
+            if (url != null && url.isEmpty() == false) {
+                int width = Resources.getSystem().getDisplayMetrics().widthPixels;
+                Picasso.get()
+                        .load(url)
+                        .resize(width, width * 2 / 3)
+                        .centerCrop()
+                        .into(imageView);
+
+            }
 
         }
-    }
 
 }
 
